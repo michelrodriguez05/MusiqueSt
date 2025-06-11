@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MusiqueSt - Inicio</title>
+  <title>Buscar Artistas - MusiqueSt</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -11,7 +11,7 @@
     <h1>🎵 MUSIQUEST</h1>
     <p>¡Ven y descubre un poco más!</p>
     <nav class="menu">
-      <a href="artistas.html">Artistas</a>
+      <a class="active" href="artistas.html">Artistas</a>
       <a href="album.html">Álbum</a>
       <a href="genero.html">Género</a>
       <a href="top.html">Top Global</a>
@@ -19,13 +19,16 @@
   </header>
 
   <main>
-    <img class="landing-img" src="assets/concierto.jpg" alt="Imagen de concierto" />
-    <h2>Bienvenido a MusiqueSt</h2>
-    <p>Explora artistas, álbumes, géneros y más con datos en tiempo real gracias a la API de Deezer.</p>
+    <h2>Buscar Artista</h2>
+    <input type="text" id="busquedaArtista" placeholder="Nombre del artista...">
+    <button onclick="buscarArtista()">Buscar</button>
+    <section id="resultado"></section>
   </main>
 
   <footer>
-    © 2025 MusiqueSt - Proyecto Front-End con API Deezer
+    © 2025 MusiqueSt
   </footer>
+
+  <script src="js/artistas.js"></script>
 </body>
 </html>
