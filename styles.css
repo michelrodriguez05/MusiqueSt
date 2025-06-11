@@ -213,6 +213,10 @@ footer {
   width: 100%;
 }
 
+footer {
+  margin-top: 580px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .menu {
@@ -224,3 +228,5 @@ footer {
     width: 100%;
   }
 }
+
+
