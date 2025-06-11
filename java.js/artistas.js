@@ -1,5 +1,3 @@
-// js/artistas.js
-
 function buscarArtista() {
     const nombre = document.getElementById('busquedaArtista').value.trim();
     const resultado = document.getElementById('resultado');

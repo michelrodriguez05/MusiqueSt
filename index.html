@@ -1,33 +1,122 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MusiqueSt - Inicio</title>
-  <link rel="stylesheet" href="../styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musiquest</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      background-color: #000;
+      padding: 1.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    
+    #logo {
+      width: 60px;
+      height: auto;
+    }
+
+    header h1::before {
+
+      font-size: 2rem;
+    }
+
+    .portada {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      margin: 0 auto;
+    }
+
+    .portada img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .portada .texto {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .portada h2 {
+      font-size: 4rem;
+      font-weight: bold;
+      color: white;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    .portada a {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.7rem 1.5rem;
+      background-color: red;
+      color: white;
+      border-radius: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .portada a:hover {
+      background-color: darkred;
+    }
+
+    footer {
+      background-color: #000;
+      color: white;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>🎵 MUSIQUEST</h1>
-    <p>¡Ven y descubre un poco más!</p>
-    <nav class="menu">
-      <a href="./html/artistas.html">Explora aqui </a>
-      
-    </nav>
+    <img src="./img/logo.png" alt="swsw" id="logo">
+    <h1>Musiquest</h1>
   </header>
 
-  <main>
-    <img class="landing-img" src="./img/portada1.png" alt="cover" />
-    <h2>Bienvenido a MusiqueSt</h2>
-    <p>Explora artistas, álbumes, géneros y más con datos en tiempo real gracias a la API de Deezer.</p>
-  </main>
+  <section class="portada">
+    <img src="./img/portada1.png" alt="Portada Musiquest">
+    <div class="texto">
+      <h2>¡VEN Y DESCUBRE<br>UN POCO MÁS!</h2>
+      <a href="./html/artistas.html">explora aquí</a>
+    </div>
+  </section>
 
   <footer>
-    © 2025 MusiqueSt 
-    <script src="js/main.js"></script>
-    <script src="js/artistas.js"></script>
-    <script src="js/album.js"></script>
-    <script src="js/generos.js"></script>
+    © 2025 MusiqueSt Todos los derechos reservados.
   </footer>
 </body>
 </html>

@@ -36,4 +36,3 @@ function obtenerGeneros() {
             resultado.innerHTML = '<p>Ocurrió un error al obtener los datos.</p>';
         });
 }
-
