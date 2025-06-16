@@ -8,30 +8,32 @@ function buscarArtista() {
         return;
     }
 
-    fetch(`https://api.deezer.com/search/artist?q=${encodeURIComponent(nombre)}`)
-        .then(response => response.json())
-        .then(data => {
-            if (!data || !data.data || data.data.length === 0) {
-                resultado.innerHTML = '<p>No se encontraron artistas con ese nombre.</p>';
-                return;
-            }
+    const url = `https://api.deezer.com/search/artist?q=${encodeURIComponent(nombre)}&output=jsonp&callback=mostrarArtistas`;
+    const script = document.createElement('script');
+    script.src = url;
+    document.body.appendChild(script);
+}
 
-            data.data.forEach(artista => {
-                const card = document.createElement('div');
-                card.className = 'card';
+function mostrarArtistas(data) {
+    const resultado = document.getElementById('resultado');
+    resultado.innerHTML = '';
 
-                card.innerHTML = `
+    if (!data || !data.data || data.data.length === 0) {
+        resultado.innerHTML = '<p>No se encontraron artistas con ese nombre.</p>';
+        return;
+    }
+
+    data.data.forEach(artista => {
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        card.innerHTML = `
             <img src="${artista.picture_medium}" alt="Imagen de ${artista.name}" />
             <h3>${artista.name}</h3>
             <p>Fans: ${artista.nb_fan.toLocaleString()}</p>
             <a href="${artista.link}" target="_blank">Ver en Deezer</a>
-          `;
+        `;
 
-                resultado.appendChild(card);
-            });
-        })
-        .catch(error => {
-            console.error('Error al buscar artista:', error);
-            resultado.innerHTML = '<p>Ocurrió un error al obtener los datos.</p>';
-        });
+        resultado.appendChild(card);
+    });
 }
