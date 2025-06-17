@@ -1,0 +1,41 @@
+document.addEventListener("DOMContentLoaded", async () => {
+  const PROXY = "https://corsproxy.io/?";
+  const API_URL = "https://api.deezer.com/chart";
+
+  const cont = document.getElementById("topGlobal");
+  if (!cont) {
+    console.error("No existe el elemento #topGlobal en el HTML.");
+    return;
+  }
+  cont.innerHTML = "<p>Cargando Top Global…</p>";
+
+  try {
+    const resp = await fetch(PROXY + encodeURIComponent(API_URL));
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const data = await resp.json();
+    
+    const tracks = data.tracks && data.tracks.data;
+    if (!Array.isArray(tracks) || tracks.length === 0) {
+      cont.innerHTML = "<p>No hay resultados disponibles.</p>";
+      return;
+    }
+
+    cont.innerHTML = ""; // Limpiamos mensaje
+
+    tracks.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "tarjeta-artista";
+
+      // Aquí eliminamos la parte del <audio>
+      card.innerHTML = `
+        <img src="${item.album.cover_medium}" alt="Portada ${item.album.title}">
+        <h3>${item.title}</h3>
+        <p><strong>Artista:</strong> ${item.artist.name}</p>
+      `;
+      cont.appendChild(card);
+    });
+  } catch (err) {
+    console.error("❌ Error al cargar Top Global:", err);
+    cont.innerHTML = "<p>Error al cargar el Top Global. Revisa la consola.</p>";
+  }
+});

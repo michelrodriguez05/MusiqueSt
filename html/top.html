@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Top Global - MusiqueSt</title>
+  <title>Top Global - Musiquest</title>
   <link rel="stylesheet" href="../styles.css" />
+  <!-- defer para que espere a que cargue el DOM -->
+  <script defer src="../java.js/top,js"></script>
 </head>
-<body>
+<body class="pagina-top">
   <header>
-    <h1><img src="../img/logo.png" alt="vinilo" id="logo">MUSIQUEST</h1>
-    <p>¡Ven y descubre un poco más!</p>
+    <h1><img src="../img/logo.png" id="logo" alt="logo"> MUSIQUEST</h1>
     <nav class="menu">
       <a href="artistas.html">Artistas</a>
       <a href="album.html">Álbum</a>
@@ -19,12 +20,12 @@
   </header>
 
   <main>
-    <h2>Top Global de MUSIQUEST </h2>
-    <section id="topGlobal"></section>
+    <h2>Top Global de Deezer</h2>
+    <section id="topGlobal" class="contenedor-artistas">
+      <!-- Aquí se mostrarán las tarjetas -->
+    </section>
   </main>
 
-  <footer>
-    © 2025 MusiqueSt Todos los derechos reservados.
-  </footer>
+  <footer>© 2025 Musiquest</footer>
 </body>
 </html>

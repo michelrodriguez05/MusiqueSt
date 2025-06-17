@@ -1,72 +1,76 @@
 @import url(./fonts/koulen_5.2.6.zip);
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body, html {
-    height: 100%;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .hero {
-    background-image: url(./img/portada1.png); /* Cambia esto por el nombre de tu imagen */
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-  }
-  
-  .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.4); /* oscurece para que el texto resalte */
-  }
-  
-  .hero-content {
-    position: relative;
-    z-index: 1;
-  }
-  
-  .hero h1 {
-    font-size: 4rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    
-  }
-  
-  .hero p {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #ffffff;
-    text-shadow: 2px 2px 4px #000;
-    margin-bottom: 2rem;
-  }
-  
-  .hero button {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s ease;
-  }
-  
-  .hero button:hover {
-    background-color: #c40000;
 
-  }
- 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+}
+
+.hero {
+  background-image: url(./img/portada1.png);
+  /* Cambia esto por el nombre de tu imagen */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* oscurece para que el texto resalte */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+
+}
+
+.hero p {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px #000;
+  margin-bottom: 2rem;
+}
+
+.hero button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.hero button:hover {
+  background-color: #c40000;
+
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -79,10 +83,7 @@ body {
   color: #f0f0f0;
   line-height: 1.6;
   min-height: 100vh;
-  background-image: url('../assets/concierto.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+
 }
 
 
@@ -104,7 +105,7 @@ header p {
   margin-top: 0.5rem;
 }
 
-#logo{
+#logo {
   width: 40px;
   height: auto;
   margin-right: 10px;
@@ -148,8 +149,8 @@ header p {
 main {
   padding: 2rem;
   text-align: center;
-  
-  
+
+
 }
 
 /* Entradas de búsqueda */
@@ -180,12 +181,11 @@ button:hover {
 /* Resultados */
 #resultado,
 #resultadoAlbum,
-#generos,
-#topGlobal {
-  display: grid;
-  gap: 1.5rem;
-  margin-top: 2rem;
-  justify-content: center;
+#generos {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    justify-content: center;
 }
 
 .card {
@@ -245,7 +245,7 @@ footer {
   border-radius: 10px;
   padding: 15px;
   width: 100%;
-  max-width: 300px; 
+  max-width: 300px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
   transition: transform 0.2s ease;
 }
@@ -290,3 +290,65 @@ footer {
   }
 }
 
+/* Contenedor para los géneros */
+.contenedor-generos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Estilo para cada tarjeta de género */
+.genero-card {
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  background-color: #727272;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.genero-card:hover {
+  transform: scale(1.05);
+}
+
+.genero-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+@media (min-width: 768px) {
+  .contenedor-generos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+}
+
+#topGlobal {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.tarjeta-artista {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.contenedor-artistas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .contenedor-artistas {
+    grid-template-columns: 1fr;
+  }
+}

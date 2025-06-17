@@ -1,35 +1,40 @@
-function buscarAlbum() {
-    const nombre = document.getElementById('busquedaAlbum').value.trim();
-    const resultado = document.getElementById('resultado');
-    resultado.innerHTML = '';
+const API_PROXY = "https://corsproxy.io/?";
+const DEEZER_ALBUM_API = "https://api.deezer.com/artist/13/albums"; // Álbumes de Eminem
 
-    if (!nombre) {
-        resultado.innerHTML = '<p>Por favor ingresa un nombre de álbum.</p>';
-        return;
-    }
-
-    const url = `https://api.deezer.com/search/album?q=${encodeURIComponent(nombre)}`;
-
-    fetch(`https://cors-anywhere.herokuapp.com/${url}`)
-        .then(res => res.json())
-        .then(data => {
-            if (!data || !data.data || data.data.length === 0) {
-                resultado.innerHTML = '<p>Álbum no encontrado.</p>';
-                return;
-            }
-
-            const album = data.data[0];
-            resultado.innerHTML = `
-                <div style="text-align:center">
-                    <h2>${album.title}</h2>
-                    <img src="${album.cover_medium}" alt="Portada del álbum" style="max-width:200px;">
-                    <p>Artista: ${album.artist.name}</p>
-                    <a href="${album.link}" target="_blank">Escuchar en Deezer</a>
-                </div>
-            `;
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            resultado.innerHTML = '<p>Ocurrió un error al buscar el álbum.</p>';
-        });
+async function obtenerAlbumes() {
+  try {
+    const respuesta = await fetch(`${API_PROXY}${encodeURIComponent(DEEZER_ALBUM_API)}`);
+    const datos = await respuesta.json();
+    return datos;
+  } catch (error) {
+    console.error("Error al obtener álbumes:", error);
+    return null;
+  }
 }
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const contenedor = document.getElementById("albumes");
+  contenedor.innerHTML = "<p>Cargando álbumes...</p>";
+
+  const resultado = await obtenerAlbumes();
+
+  if (!resultado || !resultado.data) {
+    contenedor.innerHTML = "<p>No se pudieron cargar los álbumes.</p>";
+    return;
+  }
+
+  contenedor.innerHTML = ""; // Limpiar contenido previo
+
+  resultado.data.forEach(album => {
+    const div = document.createElement("div");
+    div.className = "album-card";
+
+    div.innerHTML = `
+      <img src="${album.cover_medium}" alt="${album.title}">
+      <h3>${album.title}</h3>
+      <p>Fans: ${album.fans.toLocaleString()}</p>
+    `;
+
+    contenedor.appendChild(div);
+  });
+});
