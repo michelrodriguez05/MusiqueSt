@@ -23,19 +23,16 @@ Toda la información se obtiene dinámicamente desde la [API pública de Deezer]
    - Formulario de búsqueda por nombre.
    - Resultados con imagen, nombre y número de fans.
 
-2. **Exploración de Álbumes**  
-   - Selección de un artista para listar sus álbumes.
-   - Tarjetas con portada, título y fans.
 
-3. **Listado de Géneros**  
+2. **Listado de Géneros**  
    - Muestra todos los géneros musicales (excepto ID 0).
    - Tarjetas con imagen y nombre de cada género.
 
-4. **Top Global**  
+3. **Top Global**  
    - Lista las canciones más populares a nivel mundial.
    - Tarjetas con portada de álbum, título y artista.
 
-5. **Responsive Design**  
+4. **Responsive Design**  
    - En móvil, las tarjetas se apilan en columna.
    - En escritorio, se muestran en grilla fluida.
 
@@ -44,20 +41,13 @@ Toda la información se obtiene dinámicamente desde la [API pública de Deezer]
 ## 🛠 Tecnologías y Herramientas
 
 - **HTML5**  
-- **CSS3** (Flexbox, Grid, Media Queries)  
-- **JavaScript (ES6+)**  
+- **CSS3**  
+- **JavaScript**  
 - **Proxy CORS**: [corsproxy.io](https://corsproxy.io) / [AllOrigins](https://api.allorigins.win)  
-- **Repositorio**: Git + GitHub  
-- **Editor**: Visual Studio Code (o tu IDE preferido)  
+ 
 
 ---
 
-## ⚙️ Instalación y Ejecución
-
-1. Clona este repositorio:
-   ```bash
-   git clone (https://github.com/michelrodriguez05/pag_web_api_java)
-   cd musiquest
 
 ```
 ## ⚙️ Estructuraciòn
