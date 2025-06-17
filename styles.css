@@ -180,7 +180,6 @@ button:hover {
 
 /* Resultados */
 #resultado,
-#resultadoAlbum,
 #generos {
     display: grid;
     gap: 1.5rem;
@@ -329,26 +328,3 @@ footer {
   }
 }
 
-#topGlobal {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  padding: 1rem;
-}
-
-.tarjeta-artista {
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
-}
-.contenedor-artistas {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-@media (max-width: 768px) {
-  .contenedor-artistas {
-    grid-template-columns: 1fr;
-  }
-}
