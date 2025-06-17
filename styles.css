@@ -1,3 +1,4 @@
+@import url(./fonts/koulen_5.2.6.zip);
 * {
     margin: 0;
     padding: 0;
@@ -39,6 +40,7 @@
     font-size: 4rem;
     font-weight: bold;
     margin-bottom: 1rem;
+    
   }
   
   .hero p {
@@ -64,7 +66,7 @@
     background-color: #c40000;
 
   }
-  /* Reset básico */
+ 
 * {
   margin: 0;
   padding: 0;
@@ -83,7 +85,7 @@ body {
   background-attachment: fixed;
 }
 
-/* Encabezado principal */
+
 header {
   background-color: rgba(0, 0, 0, 0.85);
   padding: 1rem;
@@ -242,8 +244,14 @@ footer {
   background-color: #2c2c2c;
   border-radius: 10px;
   padding: 15px;
-  width: 300px;
+  width: 100%;
+  max-width: 300px; 
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.tarjeta-artista:hover {
+  transform: scale(1.03);
 }
 
 .tarjeta-artista img {
@@ -253,18 +261,20 @@ footer {
 
 .tarjeta-artista h3 {
   margin: 10px 0 5px;
+  color: #fff;
 }
 
 .tarjeta-artista p {
   margin: 5px 0;
+  color: #ccc;
 }
 
 .tarjeta-artista a {
-  color: #00f;
+  color: #ff0202;
   text-decoration: underline;
 }
 
-/* Estilo responsivo */
+
 @media (max-width: 768px) {
   .contenedor-artistas {
     flex-direction: column;
@@ -272,10 +282,11 @@ footer {
   }
 }
 
-@media (min-width: 769px) {
+
+@media (min-width: 1024px) {
   .contenedor-artistas {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
-
 

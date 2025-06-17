@@ -6,99 +6,109 @@
   <title>Musiquest</title>
   <style>
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #000;
-      color: white;
-      text-align: center;
-    }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #000;
+  color: white;
+  text-align: center;
+}
 
-    header {
-      background-color: #000;
-      padding: 1.5rem 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
+header {
+  background-color: #000;
+  padding: 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 
-    }
+header h1 {
+  font-size: 2rem;
+  color: white;
+  font-family: 'titulo';
+}
 
-    header h1 {
-      font-size: 2.5rem;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-    }
-    
-    #logo {
-      width: 60px;
-      height: auto;
-    }
+#logo {
+  width: 50px;
+  height: auto;
+}
 
-    header h1::before {
+/* Portada */
+.portada {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
 
-      font-size: 2rem;
-    }
+.portada img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    .portada {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      margin: 0 auto;
-    }
+.portada .texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0 1rem;
+  text-align: center;
+  color: white;
+  
+}
 
-    .portada img {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
+.portada h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  line-height: 1.2;
+  text-shadow: 2px 2px 5px black;
+}
 
-    .portada .texto {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      font-size: 1.5rem;
-      color: white;
-    }
+.portada a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  background-color: red;
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
 
-    .portada h2 {
-      font-size: 4rem;
-      font-weight: bold;
-      color: white;
-      text-shadow: 2px 2px 5px black;
-    }
+.portada a:hover {
+  background-color: darkred;
+}
 
-    .portada a {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.7rem 1.5rem;
-      background-color: red;
-      color: white;
-      border-radius: 20px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: background-color 0.3s;
-    }
+/* Footer */
+footer {
+  background-color: #000;
+  color: white;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  text-align: center;
+}
 
-    .portada a:hover {
-      background-color: darkred;
-    }
+/* RESPONSIVE */
+@media (min-width: 768px) {
+  .portada h2 {
+    font-size: 3rem;
+  }
+}
 
-    footer {
-      background-color: #000;
-      color: white;
-      padding: 1rem 0;
-      font-size: 0.9rem;
-    }
+@media (min-width: 1024px) {
+  .portada h2 {
+    font-size: 4rem;
+  }
+}
+
   
   </style>
 </head>

@@ -11,6 +11,14 @@ function buscarArtista() {
     const url = `https://api.deezer.com/search/artist?q=${encodeURIComponent(nombre)}&output=jsonp&callback=mostrarArtistas`;
     const script = document.createElement('script');
     script.src = url;
+    script.id = 'jsonpScript';
+
+    // Elimina script anterior si existe
+    const oldScript = document.getElementById('jsonpScript');
+    if (oldScript) {
+        oldScript.remove();
+    }
+
     document.body.appendChild(script);
 }
 
@@ -25,7 +33,7 @@ function mostrarArtistas(data) {
 
     data.data.forEach(artista => {
         const card = document.createElement('div');
-        card.className = 'card';
+        card.className = 'tarjeta-artista'; // ¡Esta clase debe coincidir con tu CSS!
 
         card.innerHTML = `
             <img src="${artista.picture_medium}" alt="Imagen de ${artista.name}" />
