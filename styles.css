@@ -13,7 +13,7 @@ html {
 }
 
 .hero {
-  background-image: url(./img/portada1.png);
+  background-image: url(../img/portada1.png);
   /* Cambia esto por el nombre de tu imagen */
   background-size: cover;
   background-position: center;
